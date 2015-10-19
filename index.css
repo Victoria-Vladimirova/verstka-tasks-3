@@ -1,0 +1,321 @@
+body
+{
+    font: .8em Arial,Helvetica,sans-serif;
+    margin-bottom: 40px;
+}
+
+h3
+{
+    font-size: 15px;
+    font-weight: 600;
+    color: #555;
+    margin: 7px 0 35px;
+}
+
+.tabs {
+    min-width: 320px;
+    max-width: 868px;
+    padding: 0;
+    margin: 0 auto 50px;
+}
+
+section
+{
+    color: #555;
+    display: none;
+    border: 1px solid #ddd;
+    padding: 15px 15px 40px;
+}
+
+.tabs input
+{
+    display: none;
+}
+
+.tabs label
+{
+    display: inline-block;
+    margin: 0 0 -1px;
+    padding: 10px 40px;
+    font-weight: 600;
+    text-align: center;
+    color: #aaa;
+    border: 1px solid #ddd;
+    background: #f1f1f1;
+    border-radius: 3px 3px 0 0;
+}
+
+.tabs label:hover
+{
+    color: #888;
+    cursor: pointer;
+}
+
+.tabs input:checked + label
+{
+    color: #555;
+    border: 1px solid #ddd;
+    border-top: 2px solid #009933;
+    border-bottom: 1px solid #fff;
+    background: #fff;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2
+{
+    display: block;
+}
+
+.tab-icon
+{
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    vertical-align: bottom;
+    display: inline-block;
+}
+
+.icon-departure
+{
+    background: url('images/1(2).png') no-repeat;
+    background-size: 25px 25px;
+}
+
+.tabs input:checked + label .icon-departure
+{
+    background: url('images/1.png') no-repeat;
+    background-size: 25px 25px;
+}
+
+.icon-arrival
+{
+    background: url('images/2(1).png') no-repeat;
+    background-size: 25px 25px;
+}
+
+.tabs input:checked + label .icon-arrival
+{
+    background: url('images/2.png') no-repeat;
+    background-size: 25px 25px;
+}
+
+table, th, td
+{
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+/* цвет четных строк */
+tr:nth-child(2n)
+{
+    background: #f1f1f1;
+}
+
+table
+{
+    overflow: hidden;
+    width: 100%;
+    table-layout: fixed;
+}
+
+td, th
+{
+    position: relative;
+}
+
+td
+{
+    white-space: nowrap;
+    text-align: center;
+}
+
+td:nth-child(1),
+th:nth-child(1)
+{
+    width: 7%;
+}
+
+td:nth-child(2),
+th:nth-child(2)
+{
+    width: 14%;
+}
+
+td:nth-child(3),
+th:nth-child(3)
+{
+    width: 9%;
+}
+
+td:nth-child(4),
+th:nth-child(4)
+{
+    width: 12%;
+}
+
+td:nth-child(5),
+th:nth-child(5)
+{
+    width: 12%;
+}
+
+td:nth-child(6),
+th:nth-child(6)
+{
+    width: 9%;
+}
+
+td:nth-child(7),
+th:nth-child(7)
+{
+    width: 8%;
+}
+
+td:nth-child(8),
+th:nth-child(8)
+{
+    width: 14%;
+}
+
+tr:hover
+{
+    background: rgba(0, 153, 51, 0.2);
+}
+
+td:hover::after,
+th:hover::after
+{
+    content: "";
+    position: absolute;
+    background: rgba(0, 153, 51, 0.2);
+    left: 0;
+    top: -5000px;
+    height: 10000px;
+    width: 100%;
+}
+
+/* стили кнопок */
+button {
+    border: 0;
+    font-weight: 600;
+    color: white;
+    padding: 10px 15px;
+    margin-top: 29px;
+    margin-right: auto;
+    border-radius: 3px;
+    background: #009933;
+    box-shadow: 0 -3px rgba(0, 128, 43, 1) inset;
+    display: none;
+}
+
+button:hover
+{
+    background: rgba(0, 128, 43, 1);
+}
+
+.btn
+{
+    margin-top: 0;
+    margin-right: auto;
+}
+
+form
+{
+    max-width: 838px;
+    display: block;
+    color: #555;
+    height: 120px;
+    padding: 5px 15px 40px;
+    border: 1px solid #ddd;
+    margin: 50px auto 50px;
+}
+
+/* стили полей */
+input
+{
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    display: inline-block;
+    width: 210px;
+    height: 18px;
+    padding: 4px;
+    margin: -20px 70px 20px 50px;
+    font-size: 13px;
+    color: #555;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+}
+
+input#city-from-input
+{
+    width: 320px;
+    display: block;
+    height: 32px;
+    margin: 40px auto 40px;
+    font-size: 18px;
+}
+
+
+.field
+{
+    clear:both;
+    text-align:right;
+}
+
+form > div > label,
+.main
+{
+    float:left;
+}
+
+input:focus:invalid
+{
+    background: url(images/invalid.png) no-repeat right center;
+    background-size: 15px;
+}
+
+input:required:valid
+{
+    background: url(images/valid.png) no-repeat right center;
+    background-size: 15px;
+}
+
+
+/* Фильтр по терминалам */
+input#terminal-aTo:checked ~ table > tbody > tr:not([data-terminal=A]),
+input#terminal-bTo:checked ~ table > tbody > tr:not([data-terminal=B]),
+input#terminal-cTo:checked ~ table > tbody > tr:not([data-terminal=C]),
+input#terminal-dTo:checked ~ table > tbody > tr:not([data-terminal=D]),
+input#terminal-aFrom:checked ~ table > tbody > tr:not([data-terminal=A]),
+input#terminal-bFrom:checked ~ table > tbody > tr:not([data-terminal=B]),
+input#terminal-cFrom:checked ~ table > tbody > tr:not([data-terminal=C]),
+input#terminal-dFrom:checked ~ table > tbody > tr:not([data-terminal=D])
+{
+    display: none;
+}
+
+/* Фильтр по городу отправления */
+input#city-from-input[value=Екатеринбург] ~ div.tabs table > tbody > tr:not([data-city-from=Екатеринбург]),
+input#city-from-input[value=Челябинск] ~ div.tabs table > tbody > tr:not([data-city-from=Челябинск]),
+input#city-from-input[value=Оренбург] ~ div.tabs table > tbody > tr:not([data-city-from=Оренбург]),
+input#city-from-input[value=Чебоксары] ~ div.tabs table > tbody > tr:not([data-city-from=Чебоксары]),
+input#city-from-input[value=Сочи] ~ div.tabs table > tbody > tr:not([data-city-from=Сочи]),
+input#city-from-input[value=Санкт-Петербург] ~ div.tabs table > tbody > tr:not([data-city-from=Санкт-Петербург]),
+input#city-from-input[value=Ростов-на-Дону] ~ div.tabs table > tbody > tr:not([data-city-from=Ростов-на-Дону]),
+input#city-from-input[value=Москва] ~ div.tabs table > tbody > tr:not([data-city-from=Москва])
+{
+    display: none;
+}
+
+form:valid button {
+    display: inline;
+}
+
+.tabs input[name^="terminal"] + label
+{
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: white;
+    padding: 5px 15px;
+}
