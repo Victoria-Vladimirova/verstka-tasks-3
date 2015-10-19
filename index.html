@@ -8,10 +8,10 @@
 <body>
 <!-- Поле для фильтрации по городу -->
 <input id="city-from-input"
-       type="text"
-       placeholder="Город отправления"
-       value=""
-       onkeyup="this.setAttribute('value', this.value)">
+    type="text"
+    placeholder="Город отправления"
+    value=""
+    onkeyup="this.setAttribute('value', this.value)">
 
 <!-- Здесь применять вашу самую сильную магию -->
 <div class="tabs">
@@ -388,12 +388,12 @@
         <div class="field">
             <label for="phone">Телефон:</label>
             <input id="phone" type="tel" placeholder="+7 922 119 42 92"
-                   pattern="^((\+?\d{1,4})[\- ]?)?((\(\d{3}\)|\d{3})[\- ]?)[\d\- ]{7,10}$" required>
+                pattern="^((\+?\d{1,4})[\- ]?)?((\(\d{3}\)|\d{3})[\- ]?)[\d\- ]{7,10}$" required>
         </div>
         <div class="field">
             <label for="email">Email:</label>
             <input id="email" name="email" type="email" placeholder="vika@gmail.com"
-                   pattern="^[\w\d\.-]+@([\w\u0410-\u044F\d-]+)(\.[\w\u0410-\u044F\d]+)+$" required>
+                pattern="^[\w\d\.-]+@([\w\u0410-\u044F\d-]+)(\.[\w\u0410-\u044F\d]+)+$" required>
         </div>
     </div>
     <button type="submit" formmethod="POST">Отправить</button>
